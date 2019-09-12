@@ -17,12 +17,6 @@ export class Main {
     return generatedTree;
   }
 
-  generateNode(node: TreeNode, leafValues: string[], nodeValues: string[]): void {
-    const newNode: TreeNode = { value: null, childs: [] };
-    const isLeaf: boolean = (Math.floor(Math.random() * 5) + 1) % 5 === 0;
-
-  }
-
   isLeafValue() {
 
   }

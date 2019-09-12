@@ -1,4 +1,5 @@
 import { AlgorithmConfig } from "../../models/algorithm-config.model";
+import { TreeNode } from "../../models/tree-node.model";
 
 export class GeneticProgramming extends AlgorithmConfig {
   operators: string[] = ["+", "-", "*", "/"];
@@ -9,7 +10,7 @@ export class GeneticProgramming extends AlgorithmConfig {
     maxTreeDepth: 10,
     percentMutation: 3,
   };
-  numeric: string[];
+  leafValues: string[] = [];
 
   start(): void { }
 
@@ -19,13 +20,34 @@ export class GeneticProgramming extends AlgorithmConfig {
     this.variables = configs.variables;
     this.maxTreeDepth = configs.maxTreeDepth;
     this.percentMutation = configs.percentMutation;
-    console.log(1);
-    console.log(this.generateNumberRange());
+    this.leafValues = [...this.generateNumberRange(), ...this.variables];
   }
 
-  *generateNumberRange() {
+  generateNumberRange(): string[] {
+    const range: string[] = [];
+
     for (let i = this.minNumber; i <= this.maxNumber; i++) {
-      yield i + "";
+      range.push(i + "");
     }
+
+    return range;
+  }
+
+  generateNode(leafValues: string[] = this.leafValues, nodeValues: string[] = this.operators): TreeNode {
+    const newNode: TreeNode = { value: null, childs: [] };
+    const isLeaf: boolean = (Math.floor(Math.random() * 5) + 1) % 5 === 0;
+    let values: string[];
+
+    if (isLeaf) {
+      values = leafValues;
+    } else {
+      values = nodeValues;
+
+      newNode.childs = [this.generateNode(), this.generateNode()];
+    }
+
+    newNode.value = values[Math.floor(Math.random() * values.length)];
+
+    return newNode;
   }
 }

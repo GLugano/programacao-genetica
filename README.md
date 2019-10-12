@@ -6,6 +6,7 @@
 - Abra o terminal
 - git clone [link do projeto]
 - npm i
+- npm i -g typescript
 
 ## Startar
 - Abra o terminal (se estiver usando o Anaconda, será necessário utilizar o terminal específico dele)

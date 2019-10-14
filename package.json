@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/app.js",
   "scripts": {
-    "start": "tsc && node dist/app.js",
-    "test": "tsc app.js --outDir dist && node dist/app.js"
+    "build": "tsc",
+    "start": "node dist/app.js"
   },
   "author": "",
   "license": "ISC",

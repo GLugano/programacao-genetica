@@ -16,4 +16,12 @@ export class AlgorithmConfig {
   * Lista de variáveis que serão utilizadas na geração da árvore
   */
   variables: string[];
+  /**
+  * População inicial
+  */
+  initialPopulation: number;
+  /**
+  * População inicial
+  */
+  maxPopulation: number;
 }

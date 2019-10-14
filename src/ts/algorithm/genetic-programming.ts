@@ -10,21 +10,29 @@ export class GeneticProgramming extends AlgorithmConfig {
     variables: ["A", "B", "C"],
     maxTreeDepth: 10,
     percentMutation: 3,
+    initialPopulation: 15,
+    maxPopulation: 200,
   };
   leafValues: string[] = [];
-  root: TreeNode = null;
+  nodes: TreeNode[] = [];
 
   start(): void {
-    this.root = this.generateNode();
-    console.log(JSON.stringify(this.root, null, 4));
+    for (let i = 0; i < this.initialPopulation; i++) {
+      this.nodes[i] = this.generateNode();
+    }
+
+    console.log(this.nodes.length);
   }
 
   configure(configs: AlgorithmConfig): void {
-    this.maxNumber = configs.maxNumber;
-    this.minNumber = configs.minNumber;
-    this.variables = configs.variables;
-    this.maxTreeDepth = configs.maxTreeDepth;
-    this.percentMutation = configs.percentMutation;
+    this.maxNumber = configs.maxNumber || this.defaultConfigs.maxNumber;
+    this.minNumber = configs.minNumber || this.defaultConfigs.minNumber;
+    this.variables = configs.variables || this.defaultConfigs.variables;
+    this.maxTreeDepth = configs.maxTreeDepth || this.defaultConfigs.maxTreeDepth;
+    this.percentMutation = configs.percentMutation || this.defaultConfigs.percentMutation;
+    this.maxPopulation = configs.maxPopulation || this.defaultConfigs.maxPopulation;
+    this.initialPopulation = configs.maxPopulation || this.defaultConfigs.initialPopulation;
+
     this.leafValues = [...this.generateNumberRange(), ...this.variables];
   }
 

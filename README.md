@@ -11,5 +11,5 @@
 ## Startar
 - Abra o terminal (se estiver usando o Anaconda, será necessário utilizar o terminal específico dele)
 - Selecione a pasta do projeto
-- npm start // para gerar os arquivos .js na pasta dist e executar a primeira vez
-- node dist/app.js // para executar as próximas vezes
+- npm run build
+- npm start

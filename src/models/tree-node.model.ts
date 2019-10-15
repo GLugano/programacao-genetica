@@ -1,5 +1,5 @@
 export class TreeNode {
-  value: string | number | null;
-  childs: TreeNode[];
+  value: string | null;
+  children: TreeNode[];
   depth: number;
 }

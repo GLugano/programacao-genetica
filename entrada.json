@@ -1,0 +1,7 @@
+{
+  "values": [
+    { "a": 1, "b": 3, "c": 5, "resultado": 20 },
+    { "a": 2, "b": 7, "c": 1, "resultado": 40 },
+    { "a": 3, "b": 1, "c": 1, "resultado": 5 }
+  ]
+}

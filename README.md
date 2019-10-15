@@ -11,5 +11,6 @@
 ## Startar
 - Abra o terminal (se estiver usando o Anaconda, será necessário utilizar o terminal específico dele)
 - Selecione a pasta do projeto
+- Altere o conteúdo do arquivo entrada.json
 - npm run build
 - npm start

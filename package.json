@@ -19,7 +19,7 @@
     "@types/lodash": "^4.14.138",
     "@types/mathjs": "^6.0.2",
     "express": "^4.16.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "mathjs": "^6.2.3",
     "ts-node": "^8.3.0"
   }
